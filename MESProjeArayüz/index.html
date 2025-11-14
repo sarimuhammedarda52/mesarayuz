@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIoT Gerçek Zamanlı Hata Tespit Paneli</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+ <header>
+        <div class="logo-container">
+            <img src="fotm.jpg" alt="Takım Logosu" class="logo">
+            <img src="images.png" alt="TÜBİTAK Logosu" class="logo">
+            <img src="download.png" alt="Okul Logosu" class="logo">
+        </div>
+        <div class="header-title">
+            <h1>IIoT Tabanlı Üretim Prototipi & Gerçek Zamanlı Hata Tespiti</h1>
+            <p>TÜBİTAK 2209-A Projesi - Proje No: 1919B012530183</p>
+        </div>
+    </header>
+    <main>
+        <div class="dashboard-grid">
+            <div id="status-panel" class="card status-ok">
+                <h2 id="status-title">ÜRETİM AKTİF</h2>
+                <p id="status-message">Sistem normal olarak çalışıyor. Hata tespit edilmedi.</p>
+            </div>
+            <div class="card video-feed">
+                <h3><span class="live-dot"></span> CANLI GÖRÜNTÜ</h3>
+                <div class="video-placeholder">
+                    Görüntü Yok...
+                </div>
+            </div>
+            <div class="card kpi-card">
+                <h3>Toplam Üretim</h3>
+                <p id="kpi-total-production" class="kpi-value">0</p>
+            </div>
+            <div class="card kpi-card">
+                <h3>Tespit Edilen Fire</h3>
+                <p id="kpi-total-defect" class="kpi-value">0</p>
+            </div>
+            <div class="card kpi-card">
+                <h3>Genel Verimlilik (OEE)</h3>
+                <p id="kpi-oee" class="kpi-value">0%</p>
+            </div>
+            <div class="card log-panel">
+                <h3>Gerçek Zamanlı Olay Kayıtları</h3>
+                <ul id="event-log">
+                    <li class="log-info">Sistem başlatıldı. Sunucu bağlantısı bekleniyor...</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>
+            <strong>Proje Ekibi:</strong> 
+            Muhammed Arda SARI , Mehmet CERAN , İlker KURTİNİ , Emirhan ŞENEL , Mustafa Can DEMİR
+        </p>
+        <p>
+            <strong>Proje Danışmanı:</strong> 
+            Öğr. Gör. Serkan MUTLU  | 
+            <strong>Kurum:</strong> 
+            Sakarya Uygulamalı Bilimler Üniversitesi
+        </p>
+    </footer>
+</body>
+</html>

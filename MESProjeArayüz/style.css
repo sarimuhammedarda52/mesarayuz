@@ -1,0 +1,184 @@
+:root {
+    --bg-color-dark: #cbcbcb;
+    --card-bg-color: #ffffff;
+    --primary-color: #b2b2b2; 
+    --text-color: #000000; 
+    --text-color-light: #000000;
+    --success-color: hsl(142, 100%, 20%); 
+    --danger-color: #df2311;
+    --border-color: #000000;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.315);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color-dark);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+header {
+    background-color: var(--card-bg-color);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--primary-color);
+    box-shadow: var(--shadow);
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 40px; 
+}
+.logo {
+    height: 85px;
+}
+.header-title h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0;
+}
+.header-title p {
+    font-size: 0.9em;
+    color: var(--text-color-light);
+}
+main {
+    padding: 30px;
+    max-width: 1600px;
+    margin: 0 auto; 
+}
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 25px;
+}
+.card {
+    background-color: var(--card-bg-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-color);
+}
+.card h3 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--text-color-light);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+#status-panel {
+    grid-column: 1 / -1; 
+    text-align: center;
+    transition: all 0.3s ease; 
+}
+#status-panel h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+#status-panel p {
+    font-size: 1.2em;
+    color: var(--text-color-light);
+}
+.status-ok { border-color: var(--success-color); }
+.status-ok h2 { color: var(--success-color); }
+
+.status-error { border-color: var(--danger-color); }
+.status-error h2 { color: var(--danger-color); }
+.video-feed {
+    grid-column: span 2;
+}
+.live-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--danger-color);
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: blink 1.5s infinite; 
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+.video-placeholder {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+    border-radius: 5px;
+    color: var(--text-color-light);
+    font-size: 1.2em;
+}
+.kpi-card {
+    text-align: center;
+}
+.kpi-value {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.log-panel {
+    grid-column: span 2;
+}
+#event-log {
+    list-style: none;
+    max-height: 250px; 
+    overflow-y: auto; 
+    font-size: 0.9em;
+}
+#event-log li {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+#event-log li:first-child { 
+    border-top: 1px solid var(--border-color);
+}
+.log-info { color: var(--text-color-light); }
+.log-error { color: var(--danger-color); font-weight: 700; }
+.log-success { color: var(--success-color); }
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--card-bg-color);
+    color: var(--text-color-light);
+    font-size: 0.8em;
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color);
+}
+@media (max-width: 1024px) {
+    .video-feed, .log-panel {
+        grid-column: 1 / -1; 
+    }
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; 
+        gap: 15px;
+        text-align: center;
+        padding: 15px;
+    }
+    main {
+        padding: 15px;
+    }
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    #status-panel, .video-feed, .log-panel {
+        grid-column: 1 / -1;
+    }
+    .kpi-value {
+        font-size: 2.5em;
+    }
+    #status-panel h2 {
+        font-size: 2em;
+    }
+}
